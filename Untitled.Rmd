@@ -9,25 +9,25 @@ Hasse
 
 All 3
 Citations = Gender + Age + Field
-AIC = 9085.358
+AIC = 9085.021
 
 2 vars
 
 Citations = Gender + Age
-AIC = 9479.579
+AIC =9479.579
 
 Citations = Gender + Field
-AIC = 9282.343
+AIC = 9280.86
 
 Citations = Age + Field 
-AIC = 9122.966
+AIC = 9122.124
 
 1 Var
 Citations = Gender
 AIC = 9674.726
 
 Citations =  Field
-AIC = 9349.579
+AIC = 9347.318
 
 Citations = Age 
 AIC = 9514.644

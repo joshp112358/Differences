@@ -8,23 +8,10 @@ output: html_document
 Hasse
 
 All 3
-Citations = Gender + Age + Field
-AIC = 9085.021
 
-2 vars
-
-Citations = Gender + Age
-AIC =9479.579
-
-Citations = Gender + Field
-AIC = 9280.86
 
 Citations = Age + Field 
 AIC = 9122.124
-
-1 Var
-Citations = Gender
-AIC = 9674.726
 
 Citations =  Field
 AIC = 9347.318
@@ -42,46 +29,13 @@ df$Gender <- as.factor(df$Gender)
 df$`PhD Age` <- 2020 - df$Earliest_Pub
 df$`Major field` = as.factor(df$`Major field`)
 df$Citations <- as.numeric(df$Citations)
-nrow(filter(df, Gender == "Female"))
 head(df)
 ```
 
 
-```{r}
-data <- filter(df, Citations>0)
-linearModel=lm(log(data$Citations) ~ factor(data$Gender)+factor(data$`Major field`)+data$`PhD Age`)
-summary(linearModel)
-print("AIC")
-AIC(linearModel)
-```
-```{r}
-anova(linearModel)
-```
 
 ```{r}
 data <- filter(df, Citations>0)
-linearModel1=lm(log(data$Citations) ~ factor(data$Gender)+data$`PhD Age`)
-summary(linearModel1)
-print("AIC")
-AIC(linearModel1)
-```
-```{r}
-anova(linearModel1)
-```
-
-```{r}
-data <- filter(df, Citations>0)
-linearModel2=lm(log(data$Citations) ~ factor(data$Gender)+factor(data$`Major field`))
-summary(linearModel2)
-print("AIC")
-AIC(linearModel2)
-```
-
-```{r}
-anova(linearModel2)
-```
-
-```{r}
 linearModel3=lm(log(data$Citations) ~ data$`PhD Age`+factor(data$`Major field`))
 summary(linearModel3)
 print("AIC")
@@ -91,13 +45,6 @@ AIC(linearModel3)
 anova(linearModel3)
 ```
 
-```{r}
-data <- filter(df, Citations>0)
-linearModel4=lm(log(data$Citations) ~ factor(data$Gender))
-summary(linearModel4)
-print("AIC")
-AIC(linearModel4)
-```
 
 ```{r}
 data <- filter(df, Citations>0)
